@@ -24,6 +24,16 @@ class Account_Model extends CI_Model
             'role' => $role
         );
         $this->db->where('username', $username);
-        $this->db->update('account');
+        $this->db->update('account', $data);
+    }
+    function adduser($username, $password, $name, $role)
+    {
+        $data = array(
+            'username' => $username,
+            'password' => $password,
+            'name' => $name,
+            'role' => $role
+        );
+        $this->db->insert('account', $data);
     }
 }

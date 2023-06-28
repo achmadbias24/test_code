@@ -52,4 +52,13 @@ class Account extends CI_Controller
         $this->Account_Model->DeleteUser($this->uri->segment(3));
         redirect($this->index());
     }
+    function adduser()
+    {
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $name = $this->input->post('name');
+        $role = $this->input->post('role');
+        $this->Account_Model->adduser($username, $password, $name, $role);
+        redirect($this->index());
+    }
 }
