@@ -45,12 +45,17 @@ class Account extends CI_Controller
         $name = $this->input->post('name');
         $role = $this->input->post('role');
         $this->Account_Model->UpdateUser($username, $password, $name, $role);
-        redirect($this->index());
+        redirect('account');
     }
     function hapus()
     {
         $this->Account_Model->DeleteUser($this->uri->segment(3));
-        redirect($this->index());
+        redirect('account');
+    }
+    function add()
+    {
+        $data['title'] = 'Tambah Account';
+        admin('create_user', $data);
     }
     function adduser()
     {
@@ -59,6 +64,6 @@ class Account extends CI_Controller
         $name = $this->input->post('name');
         $role = $this->input->post('role');
         $this->Account_Model->adduser($username, $password, $name, $role);
-        redirect($this->index());
+        redirect('account');
     }
 }

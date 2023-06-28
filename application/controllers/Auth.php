@@ -18,7 +18,8 @@ class Auth extends CI_Controller
             if ($cek_data[0]['password'] == $pass) {
                 $sessionUser = array(
                     'nama' => $cek_data[0]['name'],
-                    'role' => $cek_data[0]['role']
+                    'role' => $cek_data[0]['role'],
+                    'username' => $cek_data[0]['username']
                 );
                 $this->session->set_userdata($sessionUser);
 

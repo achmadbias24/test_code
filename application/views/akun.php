@@ -1,6 +1,6 @@
 <div class="container">
     <h1>Accounts</h1>
-    <a href="" class="btn btn-success mb-3">Create Account</a>
+    <a href="<?= site_url('account/add') ?>" class="btn btn-success mb-3">Create Account</a>
     <table class="table">
         <thead>
             <tr>
@@ -12,9 +12,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <?php $no = 1;
-                foreach ($account as $akun) : ?>
+            <?php $no = 1;
+            foreach ($account as $akun) : ?>
+                <tr>
                     <th scope="row"><?= $no; ?></th>
                     <td><?= $akun['username']; ?></td>
                     <td><?= $akun['name']; ?></td>
@@ -24,9 +24,9 @@
                         <a href="<?= site_url('account/edit/') . $akun['username'] ?>" class="btn btn-primary">Edit</a>
                         <a href="<?= site_url('account/hapus/') . $akun['username'] ?>" class="btn btn-danger">Hapus</a>
                     </td>
-                <?php $no++;
-                endforeach; ?>
-            </tr>
+                </tr>
+            <?php $no++;
+            endforeach; ?>
         </tbody>
     </table>
 </div>

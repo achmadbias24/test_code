@@ -3,7 +3,7 @@
     <form method="post" action="<?= site_url('account/editUser') ?>">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" class="form-control" value="<?= $account[0]['username'] ?>" readonly>
+            <input type="text" class="form-control" name="username" value="<?= $account[0]['username'] ?>" readonly>
         </div>
         <div class="form-group">
             <label for="password">password</label>
